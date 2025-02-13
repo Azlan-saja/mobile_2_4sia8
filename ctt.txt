@@ -1,0 +1,50 @@
+1. Komputer koneksi internet
+2. Akses idx.dev
+	=> Klik Get Started
+	=> Dan login menggunakan akun gmail
+3. Buka project sebelumnya di idx.dev
+
+========================
+Buat Project Baru di VS Code
+========================
+1. Klik menu VIEW => Command Pallate
+2. Ketikkan atau pilih => Flutter: New Project
+3. Pilih => Aplication
+4. Tentukan lokasi simpan project (Contoh di C)
+5. Ketikkan nama project mobile_2_4sia8
+6. Tunggu proses New Project nya selesai.
+========================
+Jalankan Project di VS Code
+========================
+1. Klik menu VIEW => Command Pallate
+2. Ketikkan atau pilih => Flutter: Select Device
+3. Pilih Chrome
+4. Pilih menu RUN => START DEBUG
+
+
+================================
+Design
+================================
+1. Buat layar baru
+	=> Class		=> Stateless atau Stateful
+	=> Widget	=> Scaffold()
+					=> appBar
+					=> body
+					=> bottomNavigationBar
+
+NamaWidget(
+	namaProperty1: value1,
+	namaProperty2: value2,
+)
+
+NamaWidget(
+	color: red,
+	child: NamaWidget(
+			namaProperty1: value1,
+			namaProperty2: value2,
+		),
+)
+
+
+
+
