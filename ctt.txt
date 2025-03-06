@@ -67,6 +67,24 @@ Buka project terbaru
 
 4. Buka flutlab.io
 
+
+Buka project terbaru
+================
+1.  Akses "github.com/Azlan-saja"
+	=> Klik menu "Repositories"
+	=> Cari dan klik "mobile_2_4sia8"
+	=> Klik "CODE" dan salin HTTPS url
+
+2. Atau buka menggunakan "flutlab.io"
+	=> Akses "FlutLab.io" dan klik "Sign In"
+	=> Klik tombol"Continue With Google"
+	=> Klik "New Project" selanjutnya klik "Import From VSC"
+	=> Klik "Public Repo"
+	=> Repo URL => Tempel hasil salin HTTPS url diatas
+	=> Project Name => "Pertemuan6" selanjutnya klik import.
+	=> Buka project dengan cara Klik "Pertemuan6" 
+	=> Selanjutnya jalankan RUN dengan cara 
+	     klik Tombol Play di pojok kiri atas
 	
 
 

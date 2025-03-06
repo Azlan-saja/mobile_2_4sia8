@@ -21,11 +21,16 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.purpleAccent,
           foregroundColor: Colors.white,
           elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 22,
+          ),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.purpleAccent,
           unselectedItemColor: Colors.white,
-          selectedItemColor: Colors.yellow[500],
+          selectedItemColor: Colors.yellow.shade300,
           selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
           elevation: 0,
         ),
