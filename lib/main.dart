@@ -36,9 +36,13 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.purpleAccent.shade700,
-            foregroundColor: Colors.white,
-          ),
+              backgroundColor: Colors.purpleAccent.shade700,
+              foregroundColor: Colors.white,
+              textStyle: const TextStyle(
+                fontWeight: FontWeight.w500,
+                letterSpacing: 1,
+                fontSize: 16,
+              )),
         ),
       ),
       home: const Dashboard(),

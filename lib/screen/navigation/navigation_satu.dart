@@ -8,7 +8,7 @@ class NavigationSatu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Navigation 1'),
+        title: const Text('Kirim Data'),
       ),
       body: Center(
         child: Text(

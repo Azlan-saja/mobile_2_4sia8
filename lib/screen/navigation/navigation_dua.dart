@@ -7,7 +7,7 @@ class NavigationDua extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Navigation 2'),
+        title: const Text('Terima Data'),
       ),
       body: Center(
         child: ElevatedButton(

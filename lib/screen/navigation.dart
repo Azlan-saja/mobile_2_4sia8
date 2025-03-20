@@ -28,7 +28,7 @@ class Navigation extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Navigation 1'),
+              child: const Text('Kirim Data'),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -43,7 +43,7 @@ class Navigation extends StatelessWidget {
                     ? terimaData.text = result
                     : terimaData.clear();
               },
-              child: const Text('Navigation 2'),
+              child: const Text('Terima Data'),
             ),
             Padding(
               padding: const EdgeInsets.all(12),
@@ -68,6 +68,29 @@ class Navigation extends StatelessWidget {
                 ),
               ),
             ),
+            const Divider(),
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: TextFormField(
+                keyboardType: TextInputType.number,
+                maxLength: 2,
+                decoration: InputDecoration(
+                  labelText: 'Nilai 1',
+                  border: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.purpleAccent.shade400),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(50))),
+                  labelStyle: const TextStyle(
+                    color: Colors.blueGrey,
+                  ),
+                  suffixIcon: const Icon(
+                    Icons.check,
+                  ),
+                  helperText: "Silahkan input nilai 1 sekarang!",
+                ),
+              ),
+            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -77,7 +100,7 @@ class Navigation extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Navigation 3'),
+              child: const Text('Kirim & Terima Data'),
             ),
           ],
         ),
