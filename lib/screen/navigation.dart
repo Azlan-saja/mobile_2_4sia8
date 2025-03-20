@@ -50,15 +50,18 @@ class Navigation extends StatelessWidget {
               child: TextFormField(
                 readOnly: true,
                 controller: terimaData,
-                maxLength: 20,
-                decoration: const InputDecoration(
+                maxLength: 50,
+                decoration: InputDecoration(
                   labelText: 'Terima Data',
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
-                  labelStyle: TextStyle(
+                      borderSide:
+                          BorderSide(color: Colors.purpleAccent.shade400),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(50))),
+                  labelStyle: const TextStyle(
                     color: Colors.blueGrey,
                   ),
-                  suffixIcon: Icon(
+                  suffixIcon: const Icon(
                     Icons.check,
                   ),
                   helperText: "Datanya apa ya?",
