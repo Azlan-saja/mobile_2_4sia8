@@ -5,6 +5,8 @@ import 'package:master/screen/navigation/navigation_tiga.dart';
 
 class Navigation extends StatelessWidget {
   final terimaData = TextEditingController();
+  final kirimNilai1 = TextEditingController();
+
   Navigation({super.key});
 
   @override
@@ -72,6 +74,7 @@ class Navigation extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(12),
               child: TextFormField(
+                controller: kirimNilai1,
                 keyboardType: TextInputType.number,
                 maxLength: 2,
                 decoration: InputDecoration(
@@ -92,13 +95,25 @@ class Navigation extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(
+              onPressed: () async {
+                final balasan = await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const NavigationTiga(),
+                    builder: (context) =>
+                        NavigationTiga(nilai1: int.parse(kirimNilai1.text)),
                   ),
                 );
+                if (balasan != null) {
+                  if (!context.mounted) return;
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(balasan),
+                      );
+                    },
+                  );
+                }
               },
               child: const Text('Kirim & Terima Data'),
             ),
