@@ -3,13 +3,11 @@ Buka project terbaru
 1.  Akses https://github.com/Azlan-saja
 	=> Klik Repositories
 	=> Cari dan klik mobile_2_4sia8
-	=> Klik "CODE" dan salin HTTPS url
-3. Buka menggunakan VS CODE
-	=> Klik menu "VIEW" dan pilih "Command Palette"
-	=> Ketikkan "Git" dan pilih "Git: Clone"
-	=> Tempel hasil salin HTTPS url diatas dan ENTER
-	=> Tentukan lokasi simpan (Contoh di local disk D)
-	=> Tunggu proses clone selesai.
+	=> Klik "CODE" dan Klik Download ZIP.
+	=> Klik kanan file hasil download dan Extract Here
+2. Buka menggunakan VS CODE
+	=> Buka VS Code dan pilih menu File > Open Folder
+	=> Cari lokasi folder hasil Extract ZIP sebelumnya.
 	=> Lanjut cari file "pubspek.yml", 
 	     klik kanan pilih "Get Package"
 3. Pilih Emulator dan Jalankan project
