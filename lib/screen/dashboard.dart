@@ -96,7 +96,10 @@ class _DashboardState extends State<Dashboard> {
         onTap: _ganti,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
+            icon: Badge(
+              label: Text('0'),
+              child: Icon(Icons.message),
+            ),
             label: 'Message',
           ),
           BottomNavigationBarItem(
