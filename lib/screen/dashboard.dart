@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:master/screen/account.dart';
 import 'package:master/screen/home.dart';
+import 'package:master/screen/json/file_json_screen.dart';
 import 'package:master/screen/message.dart';
 import 'package:master/screen/navigation.dart';
 import 'package:master/screen/state_manajemen/state_manajemen.dart';
@@ -83,6 +84,18 @@ class _DashboardState extends State<Dashboard> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const StateManajemen(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.file_copy),
+              title: const Text('Read File Json'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FileJsonScreen(),
                   ),
                 );
               },
