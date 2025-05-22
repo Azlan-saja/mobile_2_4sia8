@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:master/provider/counter_provider.dart';
 import 'package:master/screen/account.dart';
 import 'package:master/screen/home.dart';
 import 'package:master/screen/json/file_json_screen.dart';
 import 'package:master/screen/message.dart';
 import 'package:master/screen/navigation.dart';
 import 'package:master/screen/state_manajemen/state_manajemen.dart';
+import 'package:provider/provider.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -28,6 +30,8 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
+    final pv = Provider.of<CounterProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('APP 4SIA8'),
@@ -107,19 +111,19 @@ class _DashboardState extends State<Dashboard> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indexLayar,
         onTap: _ganti,
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Badge(
-              label: Text('0'),
-              child: Icon(Icons.message),
+              label: Text(pv.hasil.toString()),
+              child: const Icon(Icons.message),
             ),
             label: 'Message',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Account',
           ),

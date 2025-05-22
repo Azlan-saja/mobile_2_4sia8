@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:master/provider/counter_provider.dart';
+import 'package:provider/provider.dart';
 
 class StateManajemen extends StatefulWidget {
   const StateManajemen({super.key});
@@ -13,6 +15,8 @@ class _StateManajemenState extends State<StateManajemen> {
 
   @override
   Widget build(BuildContext context) {
+    final pv = Provider.of<CounterProvider>(context, listen: false);
+    print("Cetak Layar");
     return Scaffold(
       appBar: AppBar(title: const Text("Layar State Manajemen")),
       body: Center(
@@ -76,9 +80,23 @@ class _StateManajemenState extends State<StateManajemen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(onPressed: () {}, child: const Text('-1')),
-                const Text('0', style: TextStyle(fontSize: 38)),
-                ElevatedButton(onPressed: () {}, child: const Text('+1')),
+                ElevatedButton(
+                    onPressed: () {
+                      pv.kurangkan();
+                    },
+                    child: const Text('-1')),
+                Consumer<CounterProvider>(
+                  builder: (context, value, child) => Text(
+                    value.hasil.toString(),
+                    style: const TextStyle(fontSize: 38),
+                  ),
+                ),
+                // Text(pv.hasil.toString(), style: const TextStyle(fontSize: 38)),
+                ElevatedButton(
+                    onPressed: () {
+                      pv.tambahkan();
+                    },
+                    child: const Text('+1')),
               ],
             ),
           ],
