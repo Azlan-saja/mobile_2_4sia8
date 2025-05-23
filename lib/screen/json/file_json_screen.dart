@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class FileJsonScreen extends StatefulWidget {
   const FileJsonScreen({super.key});
@@ -9,6 +12,32 @@ class FileJsonScreen extends StatefulWidget {
 
 class _FileJsonScreenState extends State<FileJsonScreen> {
   final jamController = TextEditingController();
+  final pelajaranController = TextEditingController();
+
+  List roster = [];
+
+  readRoster() async {
+    final isiFileJson = await rootBundle.loadString("assets/roster.json");
+    roster = List.from(jsonDecode(isiFileJson));
+    setState(() {});
+  }
+
+  createRoster() {
+    roster.add({
+      "id": roster.isEmpty ? 1 : (roster.last['id'] + 1),
+      "jam": jamController.text,
+      "pelajaran": pelajaranController.text,
+    });
+    setState(() {});
+    jamController.clear();
+    pelajaranController.clear();
+  }
+
+  @override
+  void initState() {
+    readRoster();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +76,7 @@ class _FileJsonScreenState extends State<FileJsonScreen> {
             ),
             const SizedBox(height: 10),
             TextFormField(
+              controller: pelajaranController,
               decoration: const InputDecoration(
                 labelText: 'Mata Pelajaran',
                 border: OutlineInputBorder(
@@ -60,7 +90,11 @@ class _FileJsonScreenState extends State<FileJsonScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(onPressed: () {}, child: const Text('Simpan')),
+                ElevatedButton(
+                    onPressed: () {
+                      createRoster();
+                    },
+                    child: const Text('Simpan')),
                 ElevatedButton(onPressed: () {}, child: const Text('Batal')),
               ],
             ),
@@ -70,7 +104,7 @@ class _FileJsonScreenState extends State<FileJsonScreen> {
             const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
-                itemCount: 20,
+                itemCount: roster.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     leading: CircleAvatar(
@@ -85,14 +119,14 @@ class _FileJsonScreenState extends State<FileJsonScreen> {
                       ),
                     ),
                     title: Text(
-                      'Azlan $index',
+                      roster[index]["jam"],
                       style: const TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     subtitle: Text(
-                      '1011202 $index',
+                      roster[index]["pelajaran"],
                       style: TextStyle(
                           color: Theme.of(context).appBarTheme.backgroundColor,
                           fontStyle: FontStyle.italic),
@@ -119,7 +153,6 @@ class _FileJsonScreenState extends State<FileJsonScreen> {
                         )
                       ],
                     ),
-                    onTap: () {},
                   );
                 },
               ),

@@ -30,7 +30,7 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    final pv = Provider.of<CounterProvider>(context);
+    // final pv = Provider.of<CounterProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -112,9 +112,18 @@ class _DashboardState extends State<Dashboard> {
         currentIndex: _indexLayar,
         onTap: _ganti,
         items: [
+          // BottomNavigationBarItem(
+          //   icon: Badge(
+          //     label: Text(pv.hasil.toString()),
+          //     child: const Icon(Icons.message),
+          //   ),
+          //   label: 'Message',
+          // ),
           BottomNavigationBarItem(
             icon: Badge(
-              label: Text(pv.hasil.toString()),
+              label: Consumer<CounterProvider>(builder: (_, value, __) {
+                return Text(value.hasil.toString());
+              }),
               child: const Icon(Icons.message),
             ),
             label: 'Message',
